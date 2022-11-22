@@ -6,7 +6,7 @@ type Settings = {
 export const Settings = ({}: Settings): JSX.Element => {
     return (
         <div className="settings">
-            
+            <span></span>
         </div>
     );
 };
