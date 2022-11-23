@@ -2,7 +2,13 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to top, #209cff 100%, #68e0cf 200%);
+  // background-image: linear-gradient(to top, #209cff 100%, #68e0cf 200%);
+  background: linear-gradient(135deg, #b3e0f2 25%, transparent 0) -125px 0,
+  linear-gradient(225deg, #b3e0f2 25%, transparent 0) -125px 0,
+  linear-gradient(315deg, #b3e0f2 25%, transparent 0),
+  linear-gradient(45deg, #b3e0f2 25%, transparent 0);
+  background-color: skyblue;
+  background-size: 250px 250px;
   display: flex;
   justify-content: center;
   align-items: center;
