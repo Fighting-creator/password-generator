@@ -17,7 +17,7 @@ const sliderProps = {
 
 const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {   
     // result
-    const [generatedPassword, setGeneratedPassword] = useState<boolean>(true); // 是否是第一次生成密码
+    const [generatedPassword, setGeneratedPassword] = useState<boolean>(false); // 是否是第一次生成密码
     const resultContainerRef = useRef<HTMLDivElement>(null);
     const resultRef = useRef<HTMLDivElement>(null);
     const copyBtnRef = useRef<HTMLButtonElement>(null);
@@ -52,8 +52,9 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
     const handleCopyClick = () => {
         const textarea = document.createElement("textarea");
         const password = resultRef.current!.innerText;
-        if (!password || password == "点击生成") {
-            return;
+        console.log(password);
+        if (!password || password === "点击生成") {
+            return ;
         }
         textarea.value = password;
         document.body.appendChild(textarea);
@@ -69,7 +70,7 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
 
     // length-input-range
     const lengthInputRef = useRef<HTMLInputElement>(null);
-    const [passwordLength, setPasswordLength] = useState<number>(16);
+    const [passwordLength, setPasswordLength] = useState<number>(18);
     const [percentage, setPercentage] = useState<number>(46.4286);
     const handleLengthValueChange = (event: {target: {value: any}}) => {
         let target = event.target as HTMLInputElement;
