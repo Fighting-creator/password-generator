@@ -106,7 +106,6 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
         } else if (event.target.getAttribute("for") === "symbol" && !symbolRef.current!.disabled) {
             symbolRef.current!.checked = !symbolRef.current!.checked;
         }
-
         disableOnlyCheckbox();
     }
 
@@ -133,7 +132,7 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
                 <div className='result__info right' ref={copyInfoRef}>点击复制</div>
                 <div className='result__info left' ref={copiedInfoRef}>复制</div>
                 <div className='result__viewbox' ref={resultRef}>点击生成</div>
-                <button 
+                <button
                     className='copy-btn'
                     ref={copyBtnRef}
                     style={{
