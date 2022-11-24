@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { generatePassword } from '../../util';
 import { CopyIcon } from '../Icon/CopyIcon/CopyIcon';
 import './PasswordGenerator.scss';
@@ -72,7 +72,7 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
     const lengthInputRef = useRef<HTMLInputElement>(null);
     const [passwordLength, setPasswordLength] = useState<number>(18);
     const [percentage, setPercentage] = useState<number>(46.4286);
-    const handleLengthValueChange = (event: {target: {value: any}}) => {
+    const handleLengthValueChange = (event: any) => {
         let target = event.target as HTMLInputElement;
         setPercentage((100 * (Number(target.value) - Number(target.min))) / (Number(target.max) - Number(target.min)));
         setPasswordLength(Number(target.value));
@@ -88,7 +88,6 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
     const disableOnlyCheckbox = () => {
         let totalChecked = [uppercaseRef, lowercaseRef, numberRef, symbolRef].filter(ref => ref.current!.checked)
         totalChecked.forEach(ref => {
-            console.log(totalChecked.length);
             if (totalChecked.length === 1) {
                 ref.current!.disabled = true;
             } else {
@@ -153,26 +152,26 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
                 <input
                     className='slider' type="range" min={4} max={32} value={passwordLength}
                     ref={lengthInputRef}
-                    onChange={(e) => handleLengthValueChange(e)}
+                    onInput={(e) => handleLengthValueChange(e)}
                     style={{background: `linear-gradient(90deg, ${sliderProps.fill} ${percentage}%, ${sliderProps.background} ${percentage + 0.1}%)`,}}
                 />
             </div>
             <div className='settings'>
                 <span className='settings__title field-title'>设置</span>
                 <div className='setting'>
-                    <input type="checkbox" ref={uppercaseRef} checked={true} />
+                    <input type="checkbox" ref={uppercaseRef} defaultChecked={true} />
                     <label htmlFor='uppercase' onClick={(e) => handleLabelClick(e)}>包括大写字母</label>
                 </div>
                 <div className='setting'>
-                    <input type="checkbox" ref={lowercaseRef} checked={true} />
+                    <input type="checkbox" ref={lowercaseRef} defaultChecked={true} />
                     <label htmlFor="lowercase" onClick={(e) => handleLabelClick(e)}>包括小写字母</label>
                 </div>
                 <div className='setting'>
-                    <input type="checkbox" ref={numberRef} checked={true} />
+                    <input type="checkbox" ref={numberRef} defaultChecked={true} />
                     <label htmlFor="number" onClick={(e) => handleLabelClick(e)}>包括数字</label>
                 </div>
                 <div className='setting'>
-                    <input type="checkbox" ref={symbolRef} checked={true} />
+                    <input type="checkbox" ref={symbolRef} defaultChecked={true} />
                     <label htmlFor="symbol" onClick={(e) => handleLabelClick(e)}>包括符号</label>
                 </div>
             </div>
