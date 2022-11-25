@@ -3,6 +3,7 @@ import './App.scss';
 import { GithubLink } from './components/GithubLink/GithubLink';
 import { Heading } from './components/Heading/Heading';
 import PasswordGenerator from './components/PasswordGenerator/PasswordGenerator';
+import BeiAn from './components/BeiAn/BeiAn';
 
 function App() {
   // 每次刷新时清除控制台
@@ -17,6 +18,15 @@ function App() {
         />
         <PasswordGenerator />
         <GithubLink />
+        <p
+          style={{
+            textAlign: 'center',
+            fontSize: 10,
+            opacity: 0.5,
+          }}
+        >
+          <BeiAn />
+        </p>
       </div>
     </div>
   )

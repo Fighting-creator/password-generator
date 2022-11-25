@@ -3,6 +3,8 @@ import { generatePassword } from '../../util';
 import { CopyIcon } from '../Icon/CopyIcon/CopyIcon';
 import './PasswordGenerator.scss';
 import { Title } from './Title/Title';
+import checkPasswordStrength from 'check-password-strength'
+
 
 type PasswordGeneratorProps = {
 };
@@ -110,6 +112,7 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
     }
 
     // 当单击“生成”时，生成密码id。
+    const [strengthId, setStrengthId] = useState<number>(-1);
     const handleGeneratedPasswordClick = () => {
         const length = +lengthInputRef.current!.value;
         const hasLower = lowercaseRef.current!.checked;
@@ -117,7 +120,9 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
         const hasNumber = numberRef.current!.checked;
         const hasSymbol = symbolRef.current!.checked;
         setGeneratedPassword(true);
-        resultRef.current!.innerText = generatePassword(length, hasLower, hasUpper, hasNumber, hasSymbol);
+        const password = generatePassword(length, hasLower, hasUpper, hasNumber, hasSymbol);
+        resultRef.current!.innerText = password;
+        setStrengthId(checkPasswordStrength.passwordStrength(password).id);
         copyInfoRef.current!.style.transform = "translateY(0%)";
         copyInfoRef.current!.style.opacity = "0.75";
         copiedInfoRef.current!.style.transform = "translateY(200%)";
@@ -143,6 +148,20 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
                 >
                     <CopyIcon />
                 </button>
+            </div>
+            <div className="progress-bar">
+                <div style={
+                     strengthId >= 0 ? {background: "red", border: "1px solid red"} : {}
+                }></div>
+                <div style={
+                     strengthId >= 1 ? {background: "orange", border: "1px solid orange"} : {}
+                }></div>
+                <div style={
+                     strengthId >= 2 ? {background: "yellow", border: "1px solid yellow"} : {}
+                }></div>
+                <div style={
+                     strengthId >= 3 ? {background: "green", border: "1px solid green"} : {}
+                }></div>
             </div>
             <div className='length range__slider' data-min={4} data-max={32}>
                 <div className='length__title field-title' data-length={passwordLength}>

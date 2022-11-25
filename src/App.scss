@@ -76,6 +76,15 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
+
+  p {
+    margin-top: 1%;
+  }
+}
+
+a {
+  color: currentColor;
+  text-decoration: inherit;
 }
 
 button {
