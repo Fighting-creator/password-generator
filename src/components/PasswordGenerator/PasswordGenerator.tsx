@@ -149,19 +149,24 @@ const PasswordGenerator = ({}: PasswordGeneratorProps): JSX.Element => {
                     <CopyIcon />
                 </button>
             </div>
-            <div className="progress-bar">
+            {/* 显示密码强度方案一 */}
+            {/* <div className="progress-bar">
                 <div style={
-                     strengthId >= 0 ? {background: "red", border: "1px solid red"} : {}
+                     strengthId >= 0 ? {background: "red", } : {}
                 }></div>
                 <div style={
-                     strengthId >= 1 ? {background: "orange", border: "1px solid orange"} : {}
+                     strengthId >= 1 ? {background: "orange", } : {}
                 }></div>
                 <div style={
-                     strengthId >= 2 ? {background: "yellow", border: "1px solid yellow"} : {}
+                     strengthId >= 2 ? {background: "yellow", } : {}
                 }></div>
                 <div style={
-                     strengthId >= 3 ? {background: "green", border: "1px solid green"} : {}
+                     strengthId >= 3 ? {background: "green", } : {}
                 }></div>
+            </div> */}
+            {/* 显示密码强度方案二 */}
+            <div className="password-strength-meter" data-strength={strengthId}>
+                <div className="password-strength-meter-inner"></div>
             </div>
             <div className='length range__slider' data-min={4} data-max={32}>
                 <div className='length__title field-title' data-length={passwordLength}>
