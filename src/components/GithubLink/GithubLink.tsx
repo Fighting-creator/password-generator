@@ -23,7 +23,7 @@ const GithubIcon = ({}) => {
 
 export const GithubLink = ({}: GithubLinkProps): JSX.Element => {
     return (
-        <a className="github-corner" href="https://github.com/devloop01/password-generator" title="Fork me on GitHub" target="_blank">
+        <a className="github-corner" href="https://github.com/Fighting-creator/password-generator" title="Fork me on GitHub" target="_blank">
             <GithubIcon />
         </a>
     );
