@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/github/last-commit/Fighting-creator/password-generator" alt="last-commit" />
 </p>
 
-使用密码生成器工具创建随机密码。
+使用密码生成器工具创建随机密码。[pc 浏览器体验](https://www.lywmofan.com/PasswordGenerator)
 
 **声明：本项目仅供交流，禁止商用！否则后果自负。基于此项目的二创都是欢迎的，但非二创请不要删除原仓库地址
 （啥都不改唯独删除来源我真的会谢 🙄️，请尊重他人劳动成果）**
