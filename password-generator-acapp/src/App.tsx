@@ -32,8 +32,8 @@ function App() {
       <div className="password-generator-wrapper">
         <PasswordGenerator />
         <GithubLink />
-        <SocialPanel />
       </div>
+      <SocialPanel />
     </div>
   )
 };
