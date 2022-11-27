@@ -4,6 +4,7 @@ import { GithubLink } from './components/GithubLink/GithubLink';
 import { Heading } from './components/Heading/Heading';
 import PasswordGenerator from './components/PasswordGenerator/PasswordGenerator';
 import BeiAn from './components/BeiAn/BeiAn';
+import { SocialPanel } from './components/SocialPanel/SocialPanel';
 
 function App() {
   useEffect(() => {
@@ -29,21 +30,9 @@ function App() {
   return (
     <div className="App">
       <div className="password-generator-wrapper">
-        <Heading
-          title='React.ts 密码生成器'
-          description='使用React.ts创建一个密码生成器的简单示例。' 
-        />
         <PasswordGenerator />
         <GithubLink />
-        <p
-          style={{
-            textAlign: 'center',
-            fontSize: 10,
-            opacity: 0.5,
-          }}
-        >
-          <BeiAn />
-        </p>
+        <SocialPanel />
       </div>
     </div>
   )

@@ -1,10 +1,9 @@
 # 密码生成器Demo
 
 <p>
-    <img src="https://img.shields.io/github/package-json/v/Fighting-creator/password-generator" alt="version"/>
-    <img src="https://img.shields.io/github/license/Fighting-creator/password-generator" alt="license" />
     <img src="https://img.shields.io/github/stars/Fighting-creator/password-generator?style=social" alt="stars" />
     <img src="https://img.shields.io/github/forks/Fighting-creator/password-generator?style=social" alt="forks" />
+    <img src="https://img.shields.io/github/license/Fighting-creator/password-generator" alt="license" />
     <img src="https://img.shields.io/github/issues-raw/Fighting-creator/password-generator" alt="issues" />
     <img src="https://img.shields.io/github/issues-closed-raw/Fighting-creator/password-generator" alt="issues" />
     <img src="https://img.shields.io/github/commit-activity/m/Fighting-creator/password-generator" alt="commit-activity" />
