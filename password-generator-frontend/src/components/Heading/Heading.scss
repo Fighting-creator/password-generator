@@ -1,0 +1,23 @@
+.heading {
+    text-align: center;
+    user-select: none;
+
+    h1 {
+        background: -webkit-linear-gradient(#fff, #999);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        text-align: center;
+        margin: 0 0 5px 0;
+        font-weight: 900;
+        font-size: 4rem;
+        color: #fff;
+    }
+
+    h4 {
+        color: lighten($color: #0a0e31, $amount: 100%);
+        text-align: center;
+        margin: 0 0 35px 0;
+        font-weight: 400;
+        font-size: 24px;
+    }
+}
